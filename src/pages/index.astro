@@ -1,11 +1,138 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from "astro:content"
+import Layout from "../layouts/Layout.astro"
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const projects = await getCollection(
+    "projects",
+    (project) => project.data.posted === true
+)
 ---
 
+<style>
+    h1 {
+        text-align: center;
+        font-family: vt323;
+        font-size: 3rem;
+        margin-bottom: 40px;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .project {
+            max-width: 100%;
+            min-height: 400px;
+            max-height: 600px;
+            border: 4px solid rgb(93, 50, 50);
+            background-color: rgb(255, 238, 152);
+
+            display: flex;
+            gap: 16px;
+
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+                .image {
+                    border-right: 4px solid rgb(93, 50, 50);
+                }
+            }
+            &:nth-child(odd) {
+                h2 {
+                    text-align: right;
+                }
+
+                .image {
+                    border-left: 4px solid rgb(93, 50, 50);
+                }
+            }
+
+            a {
+                color: black;
+                &:hover {
+                    color: rgb(150, 38, 255);
+                }
+            }
+
+            .text {
+                width: 50%;
+                padding: 16px;
+                padding-bottom: 48px;
+
+                h2 {
+                    font-family: vt323, Arial, sans-serif;
+                    font-size: 2rem;
+
+                    margin-bottom: 40px;
+                }
+            }
+            .image {
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(255, 255, 255);
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                    overflow: hidden;
+                }
+
+                .optitwin {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+</style>
+
 <Layout>
-	<Welcome />
+    <h1>Portfolio</h1>
+    <div class="container">
+        {
+            projects
+                .sort((a, b) => (a.data.date < b.data.date ? 1 : -1))
+                .map((project) => (
+                    <div class="project">
+                        <div class="text">
+                            <a
+                                href={`/projects/${
+                                    project.filePath
+                                        ?.split("/")
+                                        .pop()
+                                        ?.split(".")[0]
+                                }`}
+                            >
+                                <h2>{project.data.title}</h2>
+                            </a>
+                            <p>{project.data.description}</p>
+                        </div>
+
+                        <a
+                            class="image"
+                            href={`/projects/${
+                                project.filePath
+                                    ?.split("/")
+                                    .pop()
+                                    ?.split(".")[0]
+                            }`}
+                        >
+                            {project.data.title === "Opti-Twin" ? (
+                                <img
+                                    class="optitwin"
+                                    src="/projects/opti-twin.svg"
+                                    alt="Opti-Twin"
+                                />
+                            ) : (
+                                <img
+                                    src={`/projects/webp/${project.data.image}.webp`}
+                                    alt={project.data.title}
+                                />
+                            )}
+                        </a>
+                    </div>
+                ))
+        }
+    </div>
 </Layout>
