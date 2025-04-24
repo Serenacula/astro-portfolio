@@ -9,6 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/iceland": "^5.2.5",
+    "@fontsource/saira": "^5.2.6",
+    "@fontsource/silkscreen": "^5.2.5",
+    "@fontsource/vt323": "^5.2.5",
     "astro": "^5.7.4"
   }
 }
