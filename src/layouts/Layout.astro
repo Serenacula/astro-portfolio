@@ -1,22 +1,57 @@
+---
+import "@fontsource/silkscreen"
+import "@fontsource/iceland"
+import "@fontsource/saira"
+import "@fontsource/vt323"
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/storyset-pink-robot.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Faylee Murray Browne</title>
+    </head>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+    <body>
+        <Header />
+        <main>
+            <slot />
+        </main>
+        <Footer />
+    </body>
+
+    <style is:global>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding-left: 48px;
+            padding-right: 48px;
+            background-color: rgb(238, 197, 15);
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            p {
+                font-family: saira;
+                font-size: 1.3rem;
+                line-height: 2.5rem;
+            }
+        }
+    </style>
+</html>
