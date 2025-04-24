@@ -1,0 +1,182 @@
+---
+import Layout from "../layouts/Layout.astro"
+
+type Artist = {
+    name: string
+    link: string
+    image: string
+    title: string
+    extra?: string
+}
+
+const artists: Artist[] = [
+    {
+        name: "Ands (ANDRI TEGAR MAHARDIKA)",
+        image: "/art/ands-cyberpunk_girl.jpg",
+        link: "https://pixabay.com/users/andsproject-26081561/",
+        title: "Cyperpunk Girl",
+    },
+    {
+        name: "Yuumei",
+        image: "/art/yuumei-better_tomorrow.jpg",
+        link: "https://www.yuumeiart.com/",
+        title: "Envision",
+    },
+    {
+        name: "Tim Murray Browne",
+        image: "/art/tim-heaven_in_a_wild_flower.jpg",
+        link: "https://timmb.com/",
+        title: "A Heaven in a Wildflower",
+    },
+    {
+        name: "Kilian Eng",
+        image: "/art/kilian_eng-robot.webp",
+        link: "https://cara.app/kilianeng/all",
+        title: "unknown",
+    },
+    {
+        name: "Saffron Murray Browne",
+        image: "/art/saffron-two_hundred_by_one_fifty.jpg",
+        link: "https://www.saffronmurraybrowne.com/",
+        title: "Sleepy",
+    },
+]
+
+const musicians: Artist[] = [
+    {
+        name: "Sound Stabs",
+        title: "SPIRAL",
+        link: "https://soundcloud.com/soundstabsmusic/spiral",
+        image: "/music/sound_stabs-spiral.webp",
+    },
+    {
+        name: "wastelandpyro",
+        title: "it.means.everything",
+        link: "https://www.youtube.com/watch?v=iZzlVjyuMUU",
+        image: "/music/wastelandpyro-it_means_everything.jpg",
+    },
+    {
+        name: "gabemtnz",
+        title: "GLITCH IN YOUR HEART",
+        link: "https://soundcloud.com/gabemtnz/glitch-in-your-heart",
+        image: "/music/gabemtnz-glitch_in_your_heart.jpg",
+    },
+    {
+        name: "availax",
+        title: "yeah!",
+        link: "https://availax.bandcamp.com/album/yeah",
+        image: "/music/availax-yeah.jpg",
+    },
+    {
+        name: "Astron (original by vivivivivi)",
+        title: "credits song for my death but im the final boss.",
+        link: "https://www.youtube.com/watch?v=urxeNbBc1nk",
+        image: "/music/vivi-credits_song.jpg",
+        extra: "(this is my favourite of the many remixes of this song)",
+    },
+]
+---
+
+<style>
+    h2 {
+        text-align: right;
+        font-family: vt323;
+        font-size: 4rem;
+    }
+    .container {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        overflow-x: visible;
+        overflow-y: hidden;
+
+        position: relative;
+
+        gap: 64px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+
+        margin-bottom: 48px;
+        margin-left: -48px;
+        padding-left: 48px;
+
+        div {
+            height: 100%;
+            margin-right: 48px;
+
+            a {
+                color: black;
+                &:hover {
+                    color: rgb(150, 38, 255);
+                }
+                img {
+                    width: 300px;
+                    height: 500px;
+                    object-fit: cover;
+                }
+                .title {
+                    font-family: vt323;
+                    font-size: 2.5rem;
+                    line-height: 2.8rem;
+                }
+            }
+            .name {
+                font-size: 1.2rem;
+                line-height: 1.5rem;
+                margin-bottom: 8px;
+            }
+            .extra {
+                font-size: 1rem;
+                line-height: 1.3rem;
+                text-align: center;
+            }
+        }
+    }
+
+    .line {
+        height: 0;
+        width: 100%;
+        border: 16px solid rgb(151, 42, 42);
+        content: "";
+
+        margin-bottom: 32px;
+    }
+</style>
+
+<Layout>
+    <h2>Visual</h2>
+    <div class="container">
+        {
+            artists.map((artist) => (
+                <div>
+                    <a href={artist.link}>
+                        <img
+                            src={artist.image}
+                            alt={`${artist.title} by ${artist.name}`}
+                        />
+                        <p class="title">{artist.title}</p>
+                    </a>
+                    <p class="name">{artist.name}</p>
+                </div>
+            ))
+        }
+    </div>
+    <!-- <div class="line"></div> -->
+    <h2>Audio</h2>
+    <div class="container">
+        {
+            musicians.map((musician) => (
+                <div>
+                    <a href={musician.link}>
+                        <img
+                            src={musician.image}
+                            alt={`${musician.title} by ${musician.name}`}
+                        />
+                        <p class="title">{musician.title}</p>
+                    </a>
+                    <p class="name">{musician.name}</p>
+                </div>
+            ))
+        }
+    </div>
+</Layout>
