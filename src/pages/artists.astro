@@ -12,25 +12,25 @@ type Artist = {
 const artists: Artist[] = [
     {
         name: "Ands (ANDRI TEGAR MAHARDIKA)",
-        image: "/art/ands-cyberpunk_girl.jpg",
+        image: "ands-cyberpunk_girl",
         link: "https://pixabay.com/users/andsproject-26081561/",
         title: "Cyperpunk Girl",
     },
     {
         name: "Yuumei",
-        image: "/art/yuumei-better_tomorrow.jpg",
+        image: "yuumei-better_tomorrow",
         link: "https://www.yuumeiart.com/",
         title: "Envision",
     },
     {
         name: "Tim Murray Browne",
-        image: "/art/tim-heaven_in_a_wild_flower.jpg",
+        image: "tim-heaven_in_a_wild_flower",
         link: "https://timmb.com/",
         title: "A Heaven in a Wildflower",
     },
     {
         name: "Kilian Eng",
-        image: "/art/kilian-eng_robot.webp",
+        image: "kilian-eng_robot",
         link: "https://cara.app/kilianeng/all",
         title: "unknown",
     },
@@ -47,31 +47,31 @@ const musicians: Artist[] = [
         name: "Sound Stabs",
         title: "SPIRAL",
         link: "https://soundcloud.com/soundstabsmusic/spiral",
-        image: "/music/sound_stabs-spiral.webp",
+        image: "sound_stabs-spiral",
     },
     {
         name: "wastelandpyro",
         title: "it.means.everything",
         link: "https://www.youtube.com/watch?v=iZzlVjyuMUU",
-        image: "/music/wastelandpyro-it_means_everything.jpg",
+        image: "wastelandpyro-it_means_everything",
     },
     {
         name: "gabemtnz",
         title: "GLITCH IN YOUR HEART",
         link: "https://soundcloud.com/gabemtnz/glitch-in-your-heart",
-        image: "/music/gabemtnz-glitch_in_your_heart.jpg",
+        image: "gabemtnz-glitch_in_your_heart",
     },
     {
         name: "availax",
         title: "yeah!",
         link: "https://availax.bandcamp.com/album/yeah",
-        image: "/music/availax-yeah.jpg",
+        image: "availax-yeah",
     },
     {
         name: "Astron (original by vivivivivi)",
         title: "credits song for my death but im the final boss.",
         link: "https://www.youtube.com/watch?v=urxeNbBc1nk",
-        image: "/music/vivi-credits_song.jpg",
+        image: "vivi-credits_song",
         extra: "(this is my favourite of the many remixes of this song)",
     },
 ]
@@ -151,7 +151,7 @@ const musicians: Artist[] = [
                 <div>
                     <a href={artist.link}>
                         <img
-                            src={artist.image}
+                            src={`/art/webp/${artist.image}.webp`}
                             alt={`${artist.title} by ${artist.name}`}
                         />
                         <p class="title">{artist.title}</p>
@@ -169,7 +169,7 @@ const musicians: Artist[] = [
                 <div>
                     <a href={musician.link}>
                         <img
-                            src={musician.image}
+                            src={`/art/webp/${musician.image}.webp`}
                             alt={`${musician.title} by ${musician.name}`}
                         />
                         <p class="title">{musician.title}</p>
