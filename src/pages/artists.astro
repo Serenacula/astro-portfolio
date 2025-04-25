@@ -82,12 +82,15 @@ const musicians: Artist[] = [
         text-align: right;
         font-family: vt323;
         font-size: 4rem;
+
+        @media screen and (max-width: 600px) {
+            font-size: 3rem;
+        }
     }
     .container {
         display: flex;
         flex-direction: row;
         width: 100vw;
-        overflow-x: visible;
         overflow-y: hidden;
 
         position: relative;
@@ -113,11 +116,21 @@ const musicians: Artist[] = [
                     width: 300px;
                     height: 500px;
                     object-fit: cover;
+
+                    @media screen and (max-width: 600px) {
+                        height: 350px;
+                        width: 220px;
+                    }
                 }
                 .title {
                     font-family: vt323;
                     font-size: 2.5rem;
                     line-height: 2.8rem;
+
+                    @media screen and (max-width: 600px) {
+                        font-size: 2rem;
+                        line-height: 2.2rem;
+                    }
                 }
             }
             .name {
