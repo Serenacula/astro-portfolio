@@ -151,7 +151,7 @@ const musicians: Artist[] = [
                 <div>
                     <a href={artist.link}>
                         <img
-                            src={`/astro-portfolio/${artist.image}`}
+                            src={artist.image}
                             alt={`${artist.title} by ${artist.name}`}
                         />
                         <p class="title">{artist.title}</p>
@@ -169,7 +169,7 @@ const musicians: Artist[] = [
                 <div>
                     <a href={musician.link}>
                         <img
-                            src={`/astro-portfolio/${musician.image}`}
+                            src={musician.image}
                             alt={`${musician.title} by ${musician.name}`}
                         />
                         <p class="title">{musician.title}</p>
