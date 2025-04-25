@@ -77,11 +77,6 @@ const projects = await getCollection(
                     object-fit: cover;
                     overflow: hidden;
                 }
-
-                .optitwin {
-                    width: 100%;
-                    height: auto;
-                }
             }
         }
     }
@@ -118,18 +113,10 @@ const projects = await getCollection(
                                     ?.split(".")[0]
                             }`}
                         >
-                            {project.data.title === "Opti-Twin" ? (
-                                <img
-                                    class="optitwin"
-                                    src="/projects/opti-twin.svg"
-                                    alt="Opti-Twin"
-                                />
-                            ) : (
-                                <img
-                                    src={`/projects/webp/${project.data.image}.webp`}
-                                    alt={project.data.title}
-                                />
-                            )}
+                            <img
+                                src={`/projects/webp/${project.data.image}.webp`}
+                                alt={project.data.title}
+                            />
                         </a>
                     </div>
                 ))

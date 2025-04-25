@@ -1,7 +1,7 @@
 ---
 title: "Opti-Twin"
 date: "2024-12-25"
-image: "opti-twin.svg"
+image: "opti-twin"
 link: "https://opti-twin.co.uk/"
 github: ""
 type: "project"
