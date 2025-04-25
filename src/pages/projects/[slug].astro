@@ -1,0 +1,103 @@
+---
+import { getCollection } from "astro:content"
+import Layout from "../../layouts/Layout.astro"
+import { render } from "astro:content"
+import { getEntry } from "astro:content"
+
+export async function getStaticPaths() {
+    const projects = await getCollection("projects")
+    const result = []
+    for (const project of projects) {
+        result.push({
+            ...project,
+        })
+    }
+
+    return result.map((project) => {
+        return {
+            params: { slug: project.filePath?.split("/").pop()?.split(".")[0] },
+            props: { ...project.data, renderObject: project },
+        }
+    })
+}
+
+const props = Astro.props
+const { Content } = await render(props.renderObject)
+---
+
+<style>
+    .page {
+        .top {
+            padding-left: 128px;
+            padding-right: 128px;
+            h1 {
+                text-align: center;
+                font-family: vt323;
+                font-size: 4rem;
+            }
+            img {
+                background-color: white;
+                border: 4px solid rgb(93, 50, 50);
+                /* border-radius: 25px; */
+                width: 100%;
+            }
+            .buttons {
+                padding-top: 28px;
+                padding-bottom: 28px;
+
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+                button {
+                    /* padding-bottom: 8px; */
+                    height: 40px;
+                    padding-left: 48px;
+                    padding-right: 48px;
+                    line-height: 36px;
+
+                    font-family: "saira";
+                    font-size: 1.5rem;
+
+                    /* background-color: rgb(225, 192, 255); */
+                    border: 2px solid rgb(93, 50, 50);
+                }
+            }
+        }
+        .text {
+            padding-left: 32px;
+            padding-right: 32px;
+            p {
+                line-height: 1.8em;
+                margin-bottom: 16px;
+            }
+        }
+    }
+</style>
+
+<Layout>
+    <div class="page">
+        <div class="top">
+            <img src={`/projects/webp/${props.image}.webp`} alt={props.title} />
+            <h1>{props.title}</h1>
+            <div class="buttons">
+                {
+                    props.link ? (
+                        <a href={props.link}>
+                            <button>Visit Project</button>
+                        </a>
+                    ) : undefined
+                }
+                {
+                    props.github ? (
+                        <a href={props.github}>
+                            <button>Github</button>
+                        </a>
+                    ) : undefined
+                }
+            </div>
+        </div>
+        <div class="text">
+            <Content />
+        </div>
+    </div>
+</Layout>
