@@ -7,7 +7,7 @@ github: ""
 type: "project"
 features: ["javascript", "typescript", "neo4j", "jest", "docker", "bullmq"]
 posted: true
-description: "This was a 3 month project working for a startup. My job involved building the webscraper and database input for the website, which was then shown in a search engine for used goods."
+description: "This was a 3 month project working for a startup. I built the webscraper and database input for the website, which was then shown in a search engine for used goods."
 ---
 
 This job was for a search engine that specialised in used goods. My job was primarily working in the backend with typescript, and involved building out the webscraper. This scraper would scan a list of websites (with permission from the owners) for second-hand products, and then import them into the database.
