@@ -7,7 +7,7 @@ github: ""
 type: "project"
 features: []
 posted: true
-description: "Working as one of the main developers for the opti-twin service. A monitoring tool used in the building industry, it would take data from building sensors to calculate energy/carbon use and analyse ways to lower it."
+description: "A monitoring tool used in the building industry. It would take data from building sensors to calculate energy/carbon use and analyse ways to lower it."
 ---
 
 This job involved working in a team of three developers, to build both the website and the service itself. I was working primarily as backend, although I did later take on some of the frontend work.
