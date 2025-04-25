@@ -3,5 +3,5 @@ import { defineConfig } from "astro/config"
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://www.fayleemb.com",
+    site: "https://fayleemb.com",
 })
