@@ -30,7 +30,7 @@ const artists: Artist[] = [
     },
     {
         name: "Kilian Eng",
-        image: "/art/kilian_eng-robot.webp",
+        image: "/art/kilian-eng_robot.webp",
         link: "https://cara.app/kilianeng/all",
         title: "unknown",
     },
@@ -151,7 +151,7 @@ const musicians: Artist[] = [
                 <div>
                     <a href={artist.link}>
                         <img
-                            src={artist.image}
+                            src={`/astro-portfolio/${artist.image}`}
                             alt={`${artist.title} by ${artist.name}`}
                         />
                         <p class="title">{artist.title}</p>
@@ -169,7 +169,7 @@ const musicians: Artist[] = [
                 <div>
                     <a href={musician.link}>
                         <img
-                            src={musician.image}
+                            src={`/astro-portfolio/${musician.image}`}
                             alt={`${musician.title} by ${musician.name}`}
                         />
                         <p class="title">{musician.title}</p>
