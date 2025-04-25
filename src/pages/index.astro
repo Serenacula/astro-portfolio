@@ -106,7 +106,7 @@ const projects = await getCollection(
 
                         <a
                             class="image"
-                            href={`/projects/${
+                            href={`/astro-portfolio/projects/${
                                 project.filePath
                                     ?.split("/")
                                     .pop()
@@ -114,7 +114,7 @@ const projects = await getCollection(
                             }`}
                         >
                             <img
-                                src={`/projects/webp/${project.data.image}.webp`}
+                                src={`/astro-portfolio/projects/webp/${project.data.image}.webp`}
                                 alt={project.data.title}
                             />
                         </a>
