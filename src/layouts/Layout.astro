@@ -1,7 +1,7 @@
 ---
-import "@fontsource/silkscreen" // header title
-import "@fontsource/vt323" // small title
-import "@fontsource/saira" // normal text
+import silkscreenWoff2Url from "@fontsource/silkscreen/files/silkscreen-latin-400-normal.woff2?url" // header title
+import vt323Woff2Url from "@fontsource/vt323/files/vt323-latin-400-normal.woff2?url" // small title
+import sairaWoff2Url from "@fontsource/saira/files/saira-latin-400-normal.woff2?url" // normal text
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 ---
@@ -11,6 +11,28 @@ import Footer from "../components/Footer.astro"
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
+        <link
+            rel="preload"
+            as="font"
+            href={vt323Woff2Url}
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            as="font"
+            href={silkscreenWoff2Url}
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            as="font"
+            href={sairaWoff2Url}
+            type="font/woff2"
+            crossorigin
+        />
+
         <link rel="icon" type="image/svg+xml" href="/storyset-pink_robot.svg" />
         <meta name="generator" content={Astro.generator} />
         <title>Faylee Murray Browne</title>
@@ -25,6 +47,63 @@ import Footer from "../components/Footer.astro"
     </body>
 
     <style>
+        @font-face {
+            font-family: "vt323";
+            src: url("/* will be replaced below */") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap; /* you already use swap */
+            /* optional: tune metrics to reduce jump */
+            size-adjust: 100%;
+            ascent-override: 90%;
+            descent-override: 10%;
+            line-gap-override: 0%;
+        }
+        @font-face {
+            font-family: "silkscreen";
+            src: url("/* replaced below */") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "saira";
+            src: url("/* replaced below */") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
+
+    Now replace each src: url(...) with the imported URLs using Astro’s string
+    interpolation:
+
+    <style>
+        @font-face {
+            font-family: "vt323";
+            src: url("{vt323Woff2Url}") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+            size-adjust: 100%;
+            ascent-override: 90%;
+            descent-override: 10%;
+            line-gap-override: 0%;
+        }
+        @font-face {
+            font-family: "silkscreen";
+            src: url("{silkscreenWoff2Url}") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "saira";
+            src: url("{sairaWoff2Url}") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
         html,
         body {
             margin: 0;
