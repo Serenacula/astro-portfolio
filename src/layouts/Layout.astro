@@ -12,21 +12,6 @@ import Footer from "../components/Footer.astro"
 <!doctype html>
 <html lang="en">
     <head>
-        <style>
-            h1,
-            h2 {
-                font-family:
-                    system-ui,
-                    -apple-system,
-                    Segoe UI,
-                    Roboto,
-                    Arial,
-                    sans-serif;
-            }
-        </style>
-
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
         <link
             rel="preload"
             as="font"
@@ -49,6 +34,9 @@ import Footer from "../components/Footer.astro"
             crossorigin
         />
 
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+
         <link rel="icon" type="image/svg+xml" href="/storyset-pink_robot.svg" />
         <meta name="generator" content={Astro.generator} />
         <title>Faylee Murray Browne</title>
@@ -62,7 +50,7 @@ import Footer from "../components/Footer.astro"
         <Footer />
     </body>
 
-    <style>
+    <style is:global>
         html,
         body {
             margin: 0;
