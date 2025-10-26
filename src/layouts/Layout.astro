@@ -49,38 +49,6 @@ import Footer from "../components/Footer.astro"
     <style>
         @font-face {
             font-family: "vt323";
-            src: url("/* will be replaced below */") format("woff2");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap; /* you already use swap */
-            /* optional: tune metrics to reduce jump */
-            size-adjust: 100%;
-            ascent-override: 90%;
-            descent-override: 10%;
-            line-gap-override: 0%;
-        }
-        @font-face {
-            font-family: "silkscreen";
-            src: url("/* replaced below */") format("woff2");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: "saira";
-            src: url("/* replaced below */") format("woff2");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-    </style>
-
-    Now replace each src: url(...) with the imported URLs using Astro’s string
-    interpolation:
-
-    <style>
-        @font-face {
-            font-family: "vt323";
             src: url("{vt323Woff2Url}") format("woff2");
             font-weight: 400;
             font-style: normal;
