@@ -2,6 +2,9 @@
 import "@fontsource/silkscreen" // header title
 import "@fontsource/vt323" // small title
 import "@fontsource/saira" // normal text
+import silkscreenWoff2Url from "@fontsource/silkscreen/files/silkscreen-latin-400-normal.woff2?url" // header title
+import vt323Woff2Url from "@fontsource/vt323/files/vt323-latin-400-normal.woff2?url" // small title
+import sairaWoff2Url from "@fontsource/saira/files/saira-latin-400-normal.woff2?url" // normal text
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 ---
@@ -9,6 +12,28 @@ import Footer from "../components/Footer.astro"
 <!doctype html>
 <html lang="en">
     <head>
+        <link
+            rel="preload"
+            as="font"
+            href={vt323Woff2Url}
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            as="font"
+            href={silkscreenWoff2Url}
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            as="font"
+            href={sairaWoff2Url}
+            type="font/woff2"
+            crossorigin
+        />
+
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
 
