@@ -1,7 +1,7 @@
 ---
-import "@fontsource/silkscreen" // header title
-import "@fontsource/vt323" // small title
-import "@fontsource/saira" // normal text
+// import "@fontsource/silkscreen" // header title
+// import "@fontsource/vt323" // small title
+// import "@fontsource/saira" // normal text
 import silkscreenWoff2Url from "@fontsource/silkscreen/files/silkscreen-latin-400-normal.woff2?url" // header title
 import vt323Woff2Url from "@fontsource/vt323/files/vt323-latin-400-normal.woff2?url" // small title
 import sairaWoff2Url from "@fontsource/saira/files/saira-latin-400-normal.woff2?url" // normal text
@@ -33,6 +33,35 @@ import Footer from "../components/Footer.astro"
             type="font/woff2"
             crossorigin
         />
+
+        <style is:global is:raw>
+            @font-face {
+                font-family: "VT323";
+                src: url("${vt323Url}") format("woff2");
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+                /* optional: tighten metrics to reduce jump */
+                size-adjust: 100%;
+                ascent-override: 90%;
+                descent-override: 10%;
+                line-gap-override: 0%;
+            }
+            @font-face {
+                font-family: "Silkscreen";
+                src: url("${silkscreenUrl}") format("woff2");
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+            }
+            @font-face {
+                font-family: "Saira";
+                src: url("${sairaUrl}") format("woff2");
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+            }
+        </style>
 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
