@@ -14,4 +14,4 @@ A recent project, this was built out of a frustration with the native tool 'cut'
 
 The feature set has expanded rather beyond the initial goal. It now includes full regex parsing, dynamic selections, and a variety of useful features for customising exactly what you want it to do.
 
-Originally built in bash and perl, I have moved it to rust for performance. This included an architectural change to allow for full multithreading, a feature which the original cut did not include.
+Originally built in bash and perl, I have moved it to rust for performance. This included an architectural change to allow for full multithreading, a feature which the original did not include.
