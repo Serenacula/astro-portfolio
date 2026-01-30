@@ -2,7 +2,7 @@
 title: "Splitby CLI Tool"
 date: "2025-04-22"
 image: "splitby"
-link: ""
+link: "https://serenacula.github.io/splitby/"
 github: "https://github.com/Serenacula/splitby"
 type: "project"
 features: []
