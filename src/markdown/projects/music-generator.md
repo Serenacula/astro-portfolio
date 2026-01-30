@@ -1,6 +1,6 @@
 ---
 title: "Bitty Music Generator"
-date: "2023-01-11"
+date: "2025-01-11"
 image: "bitty-music-generator"
 link: "https://serenacula.github.io/music-generator-v2/"
 github: "https://github.com/Serenacula/music-generator-v2"
