@@ -7,7 +7,7 @@ github: "https://github.com/Serenacula/splitby"
 type: "project"
 features: []
 posted: true
-description: "A CLI tool for string manipulation, as a modern replacement for 'cut'."
+description: "A Rust CLI tool for string manipulation, built to be a modern replacement for 'cut'."
 ---
 
 A recent project, this was built out of a frustration with the linux CLI tool 'cut', which I found to be quite limited in its functionality. The goal was a tool that could split strings by a delimiter, and then choose a selection of the result.
