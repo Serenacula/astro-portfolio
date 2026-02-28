@@ -6,7 +6,7 @@ link: ""
 github: "https://github.com/Serenacula/templative"
 type: "project"
 features: []
-posted: false
+posted: true
 description: "A tiny CLI tool for managing project templates"
 ---
 
