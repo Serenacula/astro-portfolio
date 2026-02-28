@@ -108,7 +108,10 @@ const { Content } = await render(props.renderObject)
 <Layout>
     <div class="page">
         <div class="top">
-            <img src={`/projects/webp/${props.image}.webp`} alt={props.title} />
+            <img
+                src={`/projects/webp/${props.image.split(".")[0]}.webp`}
+                alt={props.title}
+            />
             <h1>{props.title}</h1>
             <div class="buttons">
                 {

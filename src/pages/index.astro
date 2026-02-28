@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro"
 
 const projects = await getCollection(
     "projects",
-    (project) => project.data.posted === true
+    (project) => project.data.posted === true,
 )
 ---
 
@@ -138,7 +138,7 @@ const projects = await getCollection(
                             }`}
                         >
                             <img
-                                src={`/projects/webp/${project.data.image}.webp`}
+                                src={`/projects/webp/${project.data.image.split(".")[0]}.webp`}
                                 alt={project.data.title}
                             />
                         </a>
