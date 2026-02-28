@@ -1,7 +1,7 @@
 ---
 title: "Templative"
 date: "2026-02-12"
-image: "templative.webp"
+image: "templative"
 link: ""
 github: "https://github.com/Serenacula/templative"
 type: "project"
