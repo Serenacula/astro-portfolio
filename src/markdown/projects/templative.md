@@ -5,9 +5,9 @@ image: "templative"
 link: ""
 github: "https://github.com/Serenacula/templative"
 type: "project"
-features: []
+features: ["rust"]
 posted: true
-description: "A tiny CLI tool for managing project templates"
+description: "A tiny CLI tool for managing project templates."
 ---
 
 This project was built out of a desire that has kept popping up in my life — I often start new projects, and need to set things up to my particular requirements every time. It's a faff and I wanted a tool to remove that friction.
