@@ -5,7 +5,7 @@ image: "splitby"
 link: "https://serenacula.github.io/splitby/"
 github: "https://github.com/Serenacula/splitby"
 type: "project"
-features: []
+features: ["rust"]
 posted: true
 description: "A Rust CLI tool for string manipulation, built to be a modern replacement for 'cut'."
 ---

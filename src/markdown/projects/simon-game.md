@@ -6,7 +6,7 @@ link: "https://serenacula.github.io/simon-game/"
 github: "https://github.com/Serenacula/simon-game"
 type: "project"
 features: ["html", "javascript", "jquery"]
-posted: true
+posted: false
 description: "This is a simple Simon game I built with html and javascript. It makes use of jQuery."
 ---
 

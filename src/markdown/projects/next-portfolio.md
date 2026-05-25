@@ -6,7 +6,7 @@ link: "/"
 github: "https://github.com/Serenacula/next-portfolio"
 type: "project"
 features: ["sass", "react", "next", "gsap"]
-posted: true
+posted: false
 description: "My previous portfolio site. I have rebuilt my portfolio several times, and this particular design was built twice: once in Gatsby, and once in Next. This is the Next.js version."
 ---
 
