@@ -12,6 +12,8 @@
         "@fontsource/saira": "^5.2.6",
         "@fontsource/silkscreen": "^5.2.5",
         "@fontsource/vt323": "^5.2.5",
-        "astro": "^5.7.4"
+        "@iconify-json/mdi": "^1.2.3",
+        "astro": "^5.7.4",
+        "astro-icon": "^1.1.5"
     }
 }

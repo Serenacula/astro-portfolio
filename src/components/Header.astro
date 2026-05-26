@@ -1,3 +1,7 @@
+---
+import { Icon } from "astro-icon/components"
+---
+
 <style>
     nav {
         margin-bottom: 64px;
@@ -16,6 +20,9 @@
                 a {
                     text-decoration: none;
                     color: black;
+                    &:hover {
+                        color: rgb(150, 38, 255);
+                    }
                 }
                 h1 {
                     font-size: 48px;
@@ -32,21 +39,53 @@
                     margin-left: -3px;
                 }
             }
-            .spacer {
-                min-width: 20%;
-            }
         }
-        .links {
+
+        .nav-row {
             margin-left: -3px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px 20px;
+        }
+
+        .links {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0 20px;
+
             a {
                 font-family: saira;
                 font-size: 1.3rem;
-                color: rgb(61, 61, 61);
-                margin-right: 16px;
+            }
+        }
 
-                &:hover {
-                    color: rgb(150, 38, 255);
-                }
+        .socials {
+            display: flex;
+            align-items: center;
+            gap: 0 20px;
+
+            svg {
+                display: inline-block;
+                vertical-align: center;
+                font-size: 24px;
+            }
+        }
+
+        .dot {
+            width: 4px;
+            height: 4px;
+            background: rgb(61, 61, 61);
+            flex-shrink: 0;
+        }
+
+        .linkColors > * {
+            color: rgb(61, 61, 61);
+
+            &:hover {
+                color: rgb(150, 38, 255);
             }
         }
     }
@@ -56,14 +95,45 @@
     <nav>
         <div class="container">
             <div class="title">
-                <a href="/"><h1>Faylee Murray Browne</h1></a>
-                <h2>Fullstack Developer</h2>
+                <h1>
+                    <a href="/">Faylee Murray Browne</a>
+                </h1>
+                <h2>
+                    <span>Fullstack Developer</span>
+                </h2>
             </div>
-            <div class="spacer"></div>
         </div>
-        <div class="links">
-            <a href="/">portfolio</a>
-            <a href="/artists">cool artists I know of</a>
+
+        <div class="nav-row">
+            <div class="links linkColors">
+                <a href="/">portfolio</a>
+                <span class="dot" aria-hidden="true"></span>
+                <a href="/artists">cool artists I know of</a>
+            </div>
+            <span class="socials linkColors">
+                <a href="https://github.com/Serenacula" aria-label="Github">
+                    <Icon name="mdi:github" />
+                </a>
+                <span class="dot" aria-hidden="true"></span>
+                <span
+                    class="emailObscural"
+                    data-giveName="faylee doht murraybrowne"
+                    aria-label="Email"
+                >
+                    <Icon name="mdi:email" />
+                </span>
+                <span class="dot" aria-hidden="true"></span>
+                <a
+                    href="https://www.linkedin.com/in/faylee-murray-browne-47ba70242/"
+                    aria-label="LinkedIn"
+                >
+                    <Icon name="mdi:linkedin" />
+                </a>
+            </span>
         </div>
     </nav>
 </header>
+
+<script>
+    import "../scripts/obscureEmail.js"
+</script>
