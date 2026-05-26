@@ -5,17 +5,22 @@ import { Icon } from "astro-icon/components"
 <style>
     nav {
         margin-bottom: 64px;
+        padding-top: 40px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
 
-        .container {
-            padding-top: 40px;
+        .main {
             display: flex;
-            max-width: 100%;
-            margin-bottom: 10px;
+            flex-direction: column;
+            flex-grow: 1;
+            min-width: 0;
+            gap: 10px;
 
             .title {
                 display: flex;
                 flex-direction: column;
-                flex-grow: 1;
 
                 a {
                     text-decoration: none;
@@ -39,46 +44,40 @@ import { Icon } from "astro-icon/components"
                     margin-left: -3px;
                 }
             }
-        }
 
-        .nav-row {
-            margin-left: -3px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 16px 20px;
-        }
+            .links {
+                margin-left: -3px;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 0 20px;
 
-        .links {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0 20px;
-
-            a {
-                font-family: saira;
-                font-size: 1.3rem;
+                a {
+                    font-family: saira;
+                    font-size: 1.3rem;
+                }
             }
         }
 
         .socials {
+            padding-top: 16px;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 0 20px;
+            gap: 12px 0;
+            flex-shrink: 0;
 
             svg {
-                display: inline-block;
-                vertical-align: center;
+                display: block;
                 font-size: 24px;
             }
-        }
 
-        .dot {
-            width: 4px;
-            height: 4px;
-            background: rgb(61, 61, 61);
-            flex-shrink: 0;
+            .dot {
+                width: 4px;
+                height: 4px;
+                background: rgb(61, 61, 61);
+                flex-shrink: 0;
+            }
         }
 
         .linkColors > * {
@@ -93,7 +92,7 @@ import { Icon } from "astro-icon/components"
 
 <header>
     <nav>
-        <div class="container">
+        <div class="main">
             <div class="title">
                 <h1>
                     <a href="/">Faylee Murray Browne</a>
@@ -102,35 +101,34 @@ import { Icon } from "astro-icon/components"
                     <span>Fullstack Developer</span>
                 </h2>
             </div>
-        </div>
 
-        <div class="nav-row">
             <div class="links linkColors">
                 <a href="/">portfolio</a>
                 <span class="dot" aria-hidden="true"></span>
                 <a href="/artists">cool artists I know of</a>
             </div>
-            <span class="socials linkColors">
-                <a href="https://github.com/Serenacula" aria-label="Github">
-                    <Icon name="mdi:github" />
-                </a>
-                <span class="dot" aria-hidden="true"></span>
-                <span
-                    class="emailObscural"
-                    data-giveName="faylee doht murraybrowne"
-                    aria-label="Email"
-                >
-                    <Icon name="mdi:email" />
-                </span>
-                <span class="dot" aria-hidden="true"></span>
-                <a
-                    href="https://www.linkedin.com/in/faylee-murray-browne-47ba70242/"
-                    aria-label="LinkedIn"
-                >
-                    <Icon name="mdi:linkedin" />
-                </a>
-            </span>
         </div>
+
+        <span class="socials linkColors">
+            <a href="https://github.com/Serenacula" aria-label="Github">
+                <Icon name="mdi:github" />
+            </a>
+            <span class="dot" aria-hidden="true"></span>
+            <span
+                class="emailObscural"
+                data-giveName="faylee doht murraybrowne"
+                aria-label="Email"
+            >
+                <Icon name="mdi:email" />
+            </span>
+            <span class="dot" aria-hidden="true"></span>
+            <a
+                href="https://www.linkedin.com/in/faylee-murray-browne-47ba70242/"
+                aria-label="LinkedIn"
+            >
+                <Icon name="mdi:linkedin" />
+            </a>
+        </span>
     </nav>
 </header>
 
