@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import artistData from "../data/artists.json"
+import musicianData from "../data/musicians.json"
 
 type Artist = {
     name: string
@@ -9,89 +11,8 @@ type Artist = {
     extra?: string
 }
 
-const artists: Artist[] = [
-    {
-        name: "Ands (ANDRI TEGAR MAHARDIKA)",
-        image: "ands-cyberpunk_girl",
-        link: "https://pixabay.com/users/andsproject-26081561/",
-        title: "Cyperpunk Girl",
-    },
-    {
-        name: "Tim Murray Browne",
-        image: "tim-heaven_in_a_wild_flower",
-        link: "https://timmb.com/",
-        title: "A Heaven in a Wildflower",
-    },
-    {
-        name: "Liam Wong",
-        title: "Memories of Green",
-        link: "https://www.liamwong.com/",
-        image: "liam_wong-memories_of_green",
-    },
-    {
-        name: "Kilian Eng",
-        image: "kilian-eng_robot",
-        link: "https://cara.app/kilianeng/all",
-        title: "unknown",
-    },
-    {
-        name: "Saffron Murray Browne",
-        image: "saffron-two_hundred_by_one_fifty",
-        link: "https://www.saffronmurraybrowne.com/",
-        title: "Sleepy",
-    },
-    {
-        name: "Waneella",
-        image: "waneella-closing_hours",
-        link: "https://waneella.com/",
-        title: "Closing Hours",
-    },
-    {
-        name: "Yuumei",
-        image: "yuumei-better_tomorrow",
-        link: "https://www.yuumeiart.com/",
-        title: "Envision",
-    },
-    {
-        name: "Alena Aenami",
-        image: "alena_aenami-last_light",
-        link: "https://www.artstation.com/aenamiart",
-        title: "Last Light",
-    },
-]
-
-const musicians: Artist[] = [
-    {
-        name: "Sound Stabs",
-        title: "SPIRAL",
-        link: "https://soundcloud.com/soundstabsmusic/spiral",
-        image: "sound_stabs-spiral",
-    },
-    {
-        name: "wastelandpyro",
-        title: "it.means.everything",
-        link: "https://www.youtube.com/watch?v=iZzlVjyuMUU",
-        image: "wastelandpyro-it_means_everything",
-    },
-    {
-        name: "gabemtnz",
-        title: "GLITCH IN YOUR HEART",
-        link: "https://soundcloud.com/gabemtnz/glitch-in-your-heart",
-        image: "gabemtnz-glitch_in_your_heart",
-    },
-    {
-        name: "availax",
-        title: "yeah!",
-        link: "https://availax.bandcamp.com/album/yeah",
-        image: "availax-yeah",
-    },
-    {
-        name: "Charli Morgan",
-        title: "Tzippi of the Sea and Sky",
-        link: "https://www.youtube.com/watch?v=iAnIeMZ696Q",
-        image: "charli_morgan-tzippi",
-    },
-]
+const artists: Artist[] = artistData
+const musicians: Artist[] = musicianData
 ---
 
 <style>
