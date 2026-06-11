@@ -104,6 +104,23 @@ const { Content } = await render(props.renderObject)
                 line-height: 1.8em;
                 margin-bottom: 16px;
             }
+            p:has(a img) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+
+                @media screen and (max-width: 730px) {
+                    grid-template-columns: 1fr;
+                }
+            }
+            a:has(img) {
+                display: block;
+            }
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
         }
     }
 </style>
